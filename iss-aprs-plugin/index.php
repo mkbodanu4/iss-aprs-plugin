@@ -152,7 +152,7 @@ class ISS_APRS_Plugin
                                 <?= __('No', 'iss-aprs-plugin'); ?>
                             </td>
                             <td>
-                                <?= __('Amateur Radio Balloons Tracker', 'iss-aprs-plugin'); ?>
+                                <?= __('ISS Tracker', 'iss-aprs-plugin'); ?>
                             </td>
                         </tr>
                         <tr>
@@ -573,7 +573,7 @@ class ISS_APRS_Plugin
                                     '<div><b><?= __('Altitude', 'iss-aprs-plugin'); ?></b>: ' + latlng.altitude.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[2] + '</div>' +
                                     '<div>' +
                                     '<b><?= __('Frequency', 'iss-aprs-plugin'); ?></b>: ' +
-                                    '145.825 MHZ (APRS)' +
+                                    '145.825 MHz (APRS)' +
                                     '</div>';
                                 <?php } ?>
 

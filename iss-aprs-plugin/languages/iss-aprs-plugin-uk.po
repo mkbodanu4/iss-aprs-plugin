@@ -1,19 +1,19 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: International Space Station (ISS) APRS Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-12 14:17+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"PO-Revision-Date: 2023-03-12 14:22+0000\n"
+"Last-Translator: UR5WKM\n"
+"Language-Team: Українська\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.3; wp-6.1.1\n"
+"X-Loco-Version: 2.6.4; wp-6.1.1\n"
 "X-Domain: iss-aprs-plugin"
 
 #. Description of the plugin
@@ -21,153 +21,157 @@ msgid ""
 "Add a map with a map of stations digipeated via ISS to your WordPress site "
 "with shortcode."
 msgstr ""
+"Додайте карту станцій APRS, почутих МКС до вашого сайту на Wordpress за "
+"домогою коротких кодів."
 
 #: index.php:573
 msgid "Altitude"
-msgstr ""
+msgstr "Висота"
 
 #: index.php:105
 msgid "API Key"
-msgstr ""
+msgstr "Ключ API"
 
 #: index.php:88
 msgid "API Settings"
-msgstr ""
+msgstr "Налаштування API"
 
 #: index.php:132
 msgid "Attribute"
-msgstr ""
+msgstr "Атрибут"
 
 #: index.php:436
 msgid "Call Sign"
-msgstr ""
+msgstr "Кличний знак"
 
 #: index.php:534
 msgid "Comment"
-msgstr ""
+msgstr "Коментар"
 
 #: index.php:98 index.php:110
 msgid "E.g."
-msgstr ""
+msgstr "Наприклад"
 
 #: index.php:141
 msgid "Example"
-msgstr ""
+msgstr "Приклад"
 
 #: index.php:135
 msgid "Explanation"
-msgstr ""
+msgstr "Пояснення"
 
 #: index.php:205
 msgid ""
 "Filter data starting from this date (format YYYY-MM-DD HH:MM:SS), also "
 "accept relative date like \"1 hour ago\", \"6 days ago\" etc"
 msgstr ""
+"Фільтрувати дані починаючи з цієї дати (у форматі YYYY-MM-DD HH:MM:SS), "
+"також допустимі відносні значення  \"1 hour ago\", \"6 days ago\" тощо"
 
 #: index.php:575
 msgid "Frequency"
-msgstr ""
+msgstr "Частота"
 
 #: index.php:438
 msgid "From date"
-msgstr ""
+msgstr "Від дати"
 
 #. Author URI of the plugin
 msgid "https://diy.manko.pro"
-msgstr ""
+msgstr "https://diy.manko.pro"
 
 #: index.php:169
 msgid "https://diy.manko.pro/"
-msgstr ""
+msgstr "https://diy.manko.pro/"
 
 #. URI of the plugin
 msgid "https://github.com/mkbodanu4/iss-aprs-plugin"
-msgstr ""
+msgstr "https://github.com/mkbodanu4/iss-aprs-plugin"
 
 #. Name of the plugin
 msgid "International Space Station (ISS) APRS Plugin"
-msgstr ""
+msgstr "International Space Station (ISS) APRS Plugin"
 
 #: index.php:85
 msgid "ISS APRS Plugin"
-msgstr ""
+msgstr "ISS APRS Plugin"
 
 #: index.php:54
 msgid "ISS APRS Tracker"
-msgstr ""
+msgstr "APRS Трекер МКС"
 
 #: index.php:120 index.php:155
 msgid "ISS Tracker"
-msgstr ""
+msgstr "Трекер МКС"
 
 #: index.php:138
 msgid "Mandatory?"
-msgstr ""
+msgstr "Обов'язковий?"
 
 #: index.php:116
 msgid "Map"
-msgstr ""
+msgstr "Карта"
 
 #: index.php:247
 msgid "Map center coordinates"
-msgstr ""
+msgstr "Координати центру карти"
 
 #: index.php:149
 msgid "Map header"
-msgstr ""
+msgstr "Заголовок карти"
 
 #: index.php:219
 msgid "Map height (px)"
-msgstr ""
+msgstr "Висота карти (у пікселях)"
 
 #: index.php:233
 msgid "Map zoom"
-msgstr ""
+msgstr "Зближення карти"
 
 #: index.php:282
 msgid "Missing mandatory attributes, check shortcode"
-msgstr ""
+msgstr "Пропущені обов'язкові атрибути, перевірте короткий код"
 
 #: index.php:152 index.php:166 index.php:180 index.php:194 index.php:208
 msgid "No"
-msgstr ""
+msgstr "Ні"
 
 #: index.php:53
 msgid "Plugin Settings"
-msgstr ""
+msgstr "Налаштування плагіна"
 
 #: index.php:445
 msgid "Refresh map"
-msgstr ""
+msgstr "Оновити карту"
 
 #: index.php:441
 msgid "Reset filters"
-msgstr ""
+msgstr "Відновити фільтри"
 
 #: index.php:177
 msgid "Show filters above map, Yes or No"
-msgstr ""
+msgstr "Показувати форму з фільтрами над картою, Yes або No"
 
 #: index.php:191
 msgid "Show only call sign in details popup, Yes or No"
-msgstr ""
+msgstr "Показувати лише кличний знак у вікні з детелями, Yes або No"
 
 #: index.php:572
 msgid "Speed"
-msgstr ""
+msgstr "Швидкість"
 
 #. Author of the plugin
 msgid "UR5WKM"
-msgstr ""
+msgstr "UR5WKM"
 
 #: index.php:93
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: index.php:163
 msgid "URL to be used in map header text"
-msgstr ""
+msgstr "URL, який буде використаний для посилання в заголовку карти"
 
 #: index.php:222 index.php:236 index.php:250
 msgid "Yes"
-msgstr ""
+msgstr "Так"

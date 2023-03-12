@@ -1,0 +1,172 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: International Space Station (ISS) APRS Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-12 00:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.3; wp-6.1.1\n"
+"X-Domain: iss-aprs-plugin"
+
+#. Description of the plugin
+msgid ""
+"Add a map with a map of stations digipeated via ISS to your WordPress site "
+"with shortcode."
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:155
+msgid "Amateur Radio Balloons Tracker"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:105
+msgid "API Key"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:88
+msgid "API Settings"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:132
+msgid "Attribute"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:436
+msgid "Call Sign"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:539
+msgid "Comment"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:98
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:110
+msgid "E.g."
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:141
+msgid "Example"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:135
+msgid "Explanation"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:205
+msgid ""
+"Filter data starting from this date (format YYYY-MM-DD HH:MM:SS), also "
+"accept relative date like \"1 hour ago\", \"6 days ago\" etc"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:438
+msgid "From date"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://diy.manko.pro"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:169
+msgid "https://diy.manko.pro/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/mkbodanu4/iss-aprs-plugin"
+msgstr ""
+
+#. Name of the plugin
+msgid "International Space Station (ISS) APRS Plugin"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:85
+msgid "ISS APRS Plugin"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:54
+msgid "ISS APRS Tracker"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:120
+msgid "ISS Tracker"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:138
+msgid "Mandatory?"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:116
+msgid "Map"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:247
+msgid "Map center coordinates"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:149
+msgid "Map header"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:219
+msgid "Map height (px)"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:233
+msgid "Map zoom"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:282
+msgid "Missing mandatory attributes, check shortcode"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:152
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:166
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:180
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:194
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:208
+msgid "No"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:53
+msgid "Plugin Settings"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:445
+msgid "Refresh map"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:441
+msgid "Reset filters"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:177
+msgid "Show filters above map, Yes or No"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:191
+msgid "Show only call sign in details popup, Yes or No"
+msgstr ""
+
+#. Author of the plugin
+msgid "UR5WKM"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:93
+msgid "URL"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:163
+msgid "URL to be used in map header text"
+msgstr ""
+
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:222
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:236
+#: ../../../../iss-aprs-plugin/iss-aprs-plugin/index.php:250
+msgid "Yes"
+msgstr ""

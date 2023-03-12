@@ -592,7 +592,7 @@ class ISS_APRS_Plugin
                                     previous_lat = null,
                                     polyline;
 
-                                for (var step = -360; step <= 5400; step += 120) {
+                                for (var step = 0; step <= 5400; step += 120) {
                                     var step_date = moment(date).add(step, 'seconds');
                                     var step_latlng = satellite.latlng(step_date.toDate());
                                     var latlng = new L.LatLng(step_latlng.latitude, step_latlng.longitude);

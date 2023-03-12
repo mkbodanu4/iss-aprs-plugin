@@ -552,9 +552,9 @@ class ISS_APRS_Plugin
                                 }
                                 var satellite = new Orb.SGP4(tle);
                                 var date = new Date();
-                                var latlng = satellite.latlng(date);
+                                var current_latlng = satellite.latlng(date);
 
-                                var marker = L.marker(new L.LatLng(latlng.latitude, latlng.longitude), {
+                                var marker = L.marker(new L.LatLng(current_latlng.latitude, current_latlng.longitude), {
                                     title: 'ISS',
                                     icon: L.icon({
                                         iconUrl: '<?= plugin_dir_url(__FILE__); ?>symbols/svgicons/83-2.svg',
@@ -569,8 +569,8 @@ class ISS_APRS_Plugin
                                 <?php if (strtolower($args['short_details']) !== "yes") { ?>
                                 popup_content += '<div>' + moment(date).format("LLL") + '</div>' +
                                     '<br/>' +
-                                    '<div><b><?= __('Speed', 'iss-aprs-plugin'); ?></b>: ' + latlng.velocity.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[2] + '</div>' +
-                                    '<div><b><?= __('Altitude', 'iss-aprs-plugin'); ?></b>: ' + latlng.altitude.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[1] + '</div>' +
+                                    '<div><b><?= __('Speed', 'iss-aprs-plugin'); ?></b>: ' + current_latlng.velocity.toFixed(2) + ' ' + current_latlng.unit_keywords.split(' ')[2] + '</div>' +
+                                    '<div><b><?= __('Altitude', 'iss-aprs-plugin'); ?></b>: ' + current_latlng.altitude.toFixed(2) + ' ' + current_latlng.unit_keywords.split(' ')[1] + '</div>' +
                                     '<div>' +
                                     '<b><?= __('Frequency', 'iss-aprs-plugin'); ?></b>: ' +
                                     '145.825 MHz (APRS)' +
@@ -580,12 +580,48 @@ class ISS_APRS_Plugin
                                 marker.bindPopup(popup_content)
                                 iss_map_markers_<?= $guid; ?>.push(marker);
 
-                                marker = L.circle(new L.LatLng(latlng.latitude, latlng.longitude), {
+                                marker = L.circle(new L.LatLng(current_latlng.latitude, current_latlng.longitude), {
                                     radius: 1931200, // 1200 miles, https://www.qsl.net/ah6rh/am-radio/spacecomm/getting-started-iss.html
                                     opacity: 0.2,
                                     stroke: false
                                 }).addTo(iss_map_<?= $guid; ?>);
                                 iss_map_markers_<?= $guid; ?>.push(marker);
+
+                                var polyline_coordinates = [],
+                                    previous_lng = null,
+                                    previous_lat = null,
+                                    polyline;
+
+                                for (var step = -360; step <= 5400; step += 120) {
+                                    var step_date = moment(date).add(step, 'seconds');
+                                    var step_latlng = satellite.latlng(step_date.toDate());
+                                    var latlng = new L.LatLng(step_latlng.latitude, step_latlng.longitude);
+
+                                    if (previous_lng !== null && previous_lat !== null) {
+                                        if (previous_lng > 0 && step_latlng.longitude < 0 && Math.abs(step_latlng.longitude - previous_lng) > 100) {
+                                            polyline = L.polyline(polyline_coordinates, {
+                                                color: 'red',
+                                                opacity: 1.0,
+                                                weight: 1
+                                            }).addTo(iss_map_<?= $guid; ?>);
+                                            iss_map_markers_<?= $guid; ?>.push(polyline);
+
+                                            polyline_coordinates = [];
+                                        } else
+                                            polyline_coordinates.push(latlng);
+                                    } else
+                                        polyline_coordinates.push(latlng);
+
+                                    previous_lng = step_latlng.longitude;
+                                    previous_lat = step_latlng.latitude;
+                                }
+
+                                polyline = L.polyline(polyline_coordinates, {
+                                    color: 'red',
+                                    opacity: 1.0,
+                                    weight: 1
+                                }).addTo(iss_map_<?= $guid; ?>);
+                                iss_map_markers_<?= $guid; ?>.push(polyline);
                             }
                         };
                         iss_xhttp.send();

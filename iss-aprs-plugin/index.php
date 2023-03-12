@@ -569,8 +569,8 @@ class ISS_APRS_Plugin
                                 <?php if (strtolower($args['short_details']) !== "yes") { ?>
                                 popup_content += '<div>' + moment(date).format("LLL") + '</div>' +
                                     '<br/>' +
-                                    '<div><b><?= __('Speed', 'iss-aprs-plugin'); ?></b>: ' + latlng.velocity.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[1] + '</div>' +
-                                    '<div><b><?= __('Altitude', 'iss-aprs-plugin'); ?></b>: ' + latlng.altitude.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[2] + '</div>' +
+                                    '<div><b><?= __('Speed', 'iss-aprs-plugin'); ?></b>: ' + latlng.velocity.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[2] + '</div>' +
+                                    '<div><b><?= __('Altitude', 'iss-aprs-plugin'); ?></b>: ' + latlng.altitude.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[1] + '</div>' +
                                     '<div>' +
                                     '<b><?= __('Frequency', 'iss-aprs-plugin'); ?></b>: ' +
                                     '145.825 MHz (APRS)' +

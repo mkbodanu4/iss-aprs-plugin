@@ -11,7 +11,7 @@ header("Cache-Control: max-age=2592000"); //30days (60sec * 60min * 24hours * 30
 $alternativeSymbolWithOverlaySupport = [33, 35, 37, 38, 39, 45, 62, 64, 79, 87, 91, 95, 97, 115, 122, 48, 65, 68, 69, 72, 94, 99, 105, 110,  117, 118];
 
 $alternativeSymbolThatShouldNotBeFlipped = [115, 62, 94, 79];
-$primarySymbolThatShouldNotBeFlipped = [94, 83, 39, 88];
+$primarySymbolThatShouldNotBeFlipped = [94, 39, 88]; //[94, 83, 39, 88];
 
 $primarySymbolRotateDiff[40] = -90;
 $primarySymbolRotateDiff[42] = -90;
@@ -37,7 +37,7 @@ $primarySymbolRotateDiff[118] = -90;
 
 $primarySymbolRotateDiff[39] = 0; // Small Airplace
 $primarySymbolRotateDiff[94] = 0; // Large Airplane
-$primarySymbolRotateDiff[83] = 0;
+//$primarySymbolRotateDiff[83] = 0;
 $primarySymbolRotateDiff[88] = 0; // Helicopter
 
 $alternativeSymbolRotateDiff[106] = -90;

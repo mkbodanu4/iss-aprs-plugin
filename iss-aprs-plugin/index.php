@@ -454,10 +454,10 @@ class ISS_APRS_Plugin
         <script src="<?= plugin_dir_url(__FILE__); ?>modules/moment/moment-with-locales.min.js"></script>
         <script src="<?= plugin_dir_url(__FILE__); ?>modules/leaflet/leaflet.js"></script>
         <script src="<?= plugin_dir_url(__FILE__); ?>modules/pikaday2-datetimepicker/pikaday.js"></script>
+        <script src="<?= plugin_dir_url(__FILE__); ?>modules/orb.js/orb-satellite.v2.min.js"></script>
         <script>
             var iss_map_<?= $guid; ?>,
                 iss_map_markers_<?= $guid; ?> = [],
-                iss_map_polylines_<?= $guid; ?> = [],
                 iss_map_from_<?= $guid; ?> = '',
                 iss_map_to_<?= $guid; ?> = '',
                 iss_updating_<?= $guid; ?> = false,
@@ -503,11 +503,6 @@ class ISS_APRS_Plugin
                             });
                             iss_map_markers_<?= $guid; ?> = [];
 
-                            iss_map_polylines_<?= $guid; ?>.forEach(function (polyline) {
-                                iss_map_<?= $guid; ?>.removeLayer(polyline);
-                            });
-                            iss_map_polylines_<?= $guid; ?> = [];
-
                             for (const [call_sign, packet] of Object.entries(json.data)) {
                                 var latlng = new L.LatLng(packet.lat, packet.lng);
 
@@ -519,7 +514,7 @@ class ISS_APRS_Plugin
                                 var img = '<?= plugin_dir_url(__FILE__); ?>symbols/symbol-' + symbol + '-' + symbol_table + '.svg';
 
                                 var iconSize = [24, 24];
-                                var iconAnchor = [12, 24]
+                                var iconAnchor = [12, 24];
 
                                 marker = L.marker(latlng, {
                                     title: call_sign,
@@ -544,6 +539,56 @@ class ISS_APRS_Plugin
                                 iss_map_markers_<?= $guid; ?>.push(marker);
                             }
                         }
+
+                        var iss_xhttp = new XMLHttpRequest();
+                        iss_xhttp.open("GET", "<?= plugin_dir_url(__FILE__); ?>cache/iss.txt", false);
+                        iss_xhttp.onreadystatechange = function () {
+                            if (this.readyState === 4 && this.status === 200) {
+                                var txt = this.response.split("\n");
+
+                                var tle = {
+                                    first_line: txt[1],
+                                    second_line: txt[2]
+                                }
+                                var satellite = new Orb.SGP4(tle);
+                                var date = new Date();
+                                var latlng = satellite.latlng(date);
+
+                                var marker = L.marker(new L.LatLng(latlng.latitude, latlng.longitude), {
+                                    title: 'ISS',
+                                    icon: L.icon({
+                                        iconUrl: '<?= plugin_dir_url(__FILE__); ?>symbols/svgicons/83-2.svg',
+                                        iconSize: [24, 24],
+                                        iconAnchor: [12, 12]
+                                    })
+                                }).addTo(iss_map_<?= $guid; ?>);
+
+                                var popup_content = '<div>' + moment(date).fromNow() + '</div>' +
+                                    '<div class="iss_text_bold">' + 'ISS' + '</div>';
+
+                                <?php if (strtolower($args['short_details']) !== "yes") { ?>
+                                popup_content += '<div>' + moment(date).format("LLL") + '</div>' +
+                                    '<br/>' +
+                                    '<div><b><?= __('Speed', 'iss-aprs-plugin'); ?></b>: ' + latlng.velocity.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[1] + '</div>' +
+                                    '<div><b><?= __('Altitude', 'iss-aprs-plugin'); ?></b>: ' + latlng.altitude.toFixed(2) + ' ' + latlng.unit_keywords.split(' ')[2] + '</div>' +
+                                    '<div>' +
+                                    '<b><?= __('Frequency', 'iss-aprs-plugin'); ?></b>: ' +
+                                    '145.825 MHZ (APRS)' +
+                                    '</div>';
+                                <?php } ?>
+
+                                marker.bindPopup(popup_content)
+                                iss_map_markers_<?= $guid; ?>.push(marker);
+
+                                marker = L.circle(new L.LatLng(latlng.latitude, latlng.longitude), {
+                                    radius: 1931200, // 1200 miles, https://www.qsl.net/ah6rh/am-radio/spacecomm/getting-started-iss.html
+                                    opacity: 0.2,
+                                    stroke: false
+                                }).addTo(iss_map_<?= $guid; ?>);
+                                iss_map_markers_<?= $guid; ?>.push(marker);
+                            }
+                        };
+                        iss_xhttp.send();
                     }
 
                     iss_updating_<?= $guid; ?> = false;

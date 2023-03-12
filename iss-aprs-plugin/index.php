@@ -461,7 +461,8 @@ class ISS_APRS_Plugin
                 iss_map_from_<?= $guid; ?> = '',
                 iss_map_to_<?= $guid; ?> = '',
                 iss_updating_<?= $guid; ?> = false,
-                iss_interval_<?= $guid; ?>;
+                iss_interval_<?= $guid; ?>,
+                iss_interval_ms_<?= $guid; ?> = 15000;
 
             function prevent_scroll_<?= $guid; ?>(e) {
                 e.preventDefault();
@@ -479,7 +480,7 @@ class ISS_APRS_Plugin
                     clearInterval(iss_interval_<?= $guid; ?>);
                     iss_interval_<?= $guid; ?> = setInterval(function () {
                         iss_map_reload_data_<?= $guid; ?>();
-                    }, 60000);
+                    }, iss_interval_ms_<?= $guid; ?>);
                 }
 
                 <?php if (strtolower($args['show_filters']) === "yes") { ?>
@@ -755,7 +756,7 @@ class ISS_APRS_Plugin
                 iss_map_reload_data_<?= $guid; ?>();
                 iss_interval_<?= $guid; ?> = setInterval(function () {
                     iss_map_reload_data_<?= $guid; ?>();
-                }, 60000);
+                }, iss_interval_ms_<?= $guid; ?>);
             });
         </script>
         <?php
